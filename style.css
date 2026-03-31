@@ -1,0 +1,234 @@
+body{
+    text-align: center;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOsjWiLOvC-EA4lOzSOjsP9-9f5MYcpUWdOA&s");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.main-title{ 
+color:red; 
+} 
+.subline{ 
+color:red; 
+} 
+.subtitle{ 
+color:red; 
+} 
+img{ 
+width:750px; 
+height:auto; 
+margin-top:20px; 
+} 
+.event{ 
+text-align:center; 
+} 
+.event-box{ 
+display:inline-block; 
+margin:15px; 
+padding: 15px; 
+border: 2px solid black; 
+width: 380px; 
+box-sizing:border-box; 
+vertical-align:top; 
+} 
+.event-box img{ 
+width:350px; 
+height:350px; 
+} 
+.events a{ 
+text-decoration:none; 
+} 
+.events p{ 
+margin:5px 0 0; 
+font-weight:bold; 
+color:black; 
+} 
+hr{ 
+width:60%; 
+margin:30px auto; 
+border:1px solid #cccc; 
+} 
+.event-box:hover{ 
+background-color:#f2f2f2; 
+transform:scale(1.05); 
+} 
+.events a:active{ 
+color: red; 
+} 
+.events a:hover p{ 
+color: blue; 
+} 
+h3::first-letter{ 
+font-size:30px; 
+color:red; 
+} 
+.subtitle::before{ 
+content:"* "; 
+} 
+.subtitle::after{ 
+content:"* "; 
+} 
+.navbar{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+.nav-links{
+    display: flex;
+}
+
+.nav-links a{
+    margin-left: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-links a:hover{
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+.wedding-img{
+    width: 350px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.birthday-img{
+    width: 350px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.concert-img{
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.corporate-img{
+    width: 350px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.book-btn {
+    padding: 15px 35px;      
+    font-size: 20px;        
+    background-color: red;   
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.popup-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-box {
+    background-color: rgba(255,255,255,0.95);
+    width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+.pricing-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.pricing-table th,
+.pricing-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+.pricing-table th {
+    background-color: red;
+    color: white;
+}
+
+.pricing-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+canvas {
+    background: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+select {
+    padding: 8px;
+    margin-top: 10px;
+}

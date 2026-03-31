@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">Elite Events</div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="wedding.html">Wedding</a>
+        <a href="birthday.html">Birthday</a>
+        <a href="corporate.html">Corporate</a>
+        <a href="concert.html">Concert</a>
+        <a href="register.html">Register</a>
+    </nav>
+</header>
+
+<div class="page-container">
+
+<h1 class="main-title">Event Registration</h1>
+<h2 class="subtitle">Register For Your Favorite Event</h2>
+
+<div class="form-box">
+<form onsubmit="registerUser(); return false;">
+
+
+    <input type="text" id="name" placeholder="Full Name" required><br><br>
+
+    <input type="email" id="email" placeholder="Email Address" required><br><br>
+
+    <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+
+    <select id="eventType">
+        <option>Wedding</option>
+        <option>Birthday</option>
+        <option>Corporate</option>
+        <option>Concert</option>
+    </select>
+    <br> <br>
+    <select id="packageType">
+    <option>Basic</option>
+    <option>Standard</option>
+    <option>Premium</option>
+    <option>Luxury</option>
+    </select>
+
+
+    <button class="book-btn" type="submit">Submit Registration</button>
+
+</form>
+</div>
+
+<h3 id="totalUsers"></h3>
+<ul id="userList"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

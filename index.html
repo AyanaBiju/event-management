@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">Elite Events</div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="wedding.html">Wedding</a>
+        <a href="birthday.html">Birthday</a>
+        <a href="corporate.html">Corporate</a>
+        <a href="concert.html">Concert</a>
+    </nav>
+</header>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h2>Welcome to Elite Events 🎉</h2>
+        <p>We create unforgettable moments for your special occasions.</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<div class="page-container">
+
+<h2 class="subline"><b><i>“Where Moments Become Memories”</i></b></h2>
+<h3>We design, plan, and deliver unforgettable events that turn your special moments into lifelong memories.</h3>
+
+<hr>
+
+<h2 class="main-title">Our Events</h2>
+
+<div class="events">
+
+<div class="event-box">
+<a href="wedding.html">
+<img src="images/images.jpg">
+<p>Wedding</p>
+</a>
+</div>
+
+<div class="event-box">
+<a href="birthday.html">
+<img src="images/b.jpg">
+<p>Birthday</p>
+</a>
+</div>
+
+<div class="event-box">
+<a href="corporate.html">
+<img src="images/c.jpg">
+<p>Corporate</p>
+</a>
+</div>
+
+<div class="event-box">
+<a href="concert.html">
+<img src="images/co.jpg">
+<p>Concert</p>
+</a>
+</div>
+
+</div>
+
+<br><br>
+
+<a href="register.html">
+<button class="book-btn">Register Now</button>
+</a>
+
+<hr>
+
+<h2 class="subtitle">About Us</h2>
+<p>
+Elite Events is a professional event management company specialising in weddings, birthdays, corporate events, and concerts.
+</p>
+
+<hr>
+
+<h2 class="subtitle">Why Choose Us</h2>
+<p>Experienced team</p>
+<p>Creative designs</p>
+<p>Affordable packages</p>
+<p>On-time execution</p>
+
+<hr>
+
+<h2 class="subtitle">Contact Us</h2>
+<p>Email: eliteevents@gmail.com</p>
+<p>Phone: +91 98765 43210</p>
+<p>Location: Kochi, Kerala</p>
+
+<hr>
+
+<h2 class="subtitle">Quick Enquiry</h2>
+
+<form onsubmit="submitForm(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required><br><br>
+    <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+    <button class="book-btn" type="submit">Submit</button>
+</form>
+
+<hr>
+
+<h2 class="subtitle">Live Event Banner</h2>
+
+<canvas id="myCanvas" width="500" height="300"></canvas>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
