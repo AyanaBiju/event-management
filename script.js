@@ -1,7 +1,5 @@
-// ================= PAGE LOAD =================
 window.onload = function () {
 
-    // Show popup on homepage
     if (window.location.pathname.includes("index.html")) {
         let popup = document.getElementById("popup");
         if (popup) popup.style.display = "flex";
@@ -10,7 +8,6 @@ window.onload = function () {
     initCanvas();
     animateBanner();
 
-    // Load saved users (LocalStorage)
     let savedUsers = localStorage.getItem("users");
     if (savedUsers) {
         registrations = JSON.parse(savedUsers);
@@ -21,18 +18,15 @@ window.onload = function () {
     setupValidation();
 };
 
-// ================= POPUP =================
 function closePopup() {
     let popup = document.getElementById("popup");
     if (popup) popup.style.display = "none";
 }
 
-// ================= CONTACT FORM =================
 function submitForm() {
     alert("Thank you! We will contact you soon.");
 }
 
-// ================= REGISTRATION =================
 let registrations = [];
 
 function registerUser() {
@@ -65,7 +59,6 @@ function registerUser() {
 
     registrations.push(user);
 
-    // Save to LocalStorage
     localStorage.setItem("users", JSON.stringify(registrations));
 
     alert(`Thank you ${name}! Registration successful.`);
@@ -75,7 +68,6 @@ function registerUser() {
     clearForm();
 }
 
-// ================= CLEAR FORM =================
 function clearForm() {
     ["name", "email", "phone"].forEach(id => {
         let el = document.getElementById(id);
@@ -83,7 +75,6 @@ function clearForm() {
     });
 }
 
-// ================= UPDATE USERS =================
 function updateTotalUsers() {
     let totalElement = document.getElementById("totalUsers");
     if (totalElement) {
@@ -91,7 +82,6 @@ function updateTotalUsers() {
     }
 }
 
-// ================= DISPLAY USERS =================
 function displayUsers() {
     let list = document.getElementById("userList");
     if (!list) return;
@@ -99,26 +89,22 @@ function displayUsers() {
     list.innerHTML = "";
 
     registrations.forEach((user, index) => {
-
         let li = document.createElement("li");
 
         li.innerHTML = `
             ${user.name} - ${user.event} (${user.package})
-            <button onclick="deleteUser(${index})">Delete</button>
+            <button onclick="deleteUser(${index})" style="margin-left:10px;">Delete</button>
         `;
 
         list.appendChild(li);
     });
 }
 
-// ================= DELETE USER =================
 function deleteUser(index) {
 
-    if (confirm("Are you sure you want to delete this registration?")) {
-
+    if (confirm("Are you sure you want to delete this user?")) {
         registrations.splice(index, 1);
 
-        // Update LocalStorage
         localStorage.setItem("users", JSON.stringify(registrations));
 
         updateTotalUsers();
@@ -126,59 +112,51 @@ function deleteUser(index) {
     }
 }
 
-// ================= CANVAS =================
-let ctx;
-let bannerX = 600;
+let canvas, ctx;
+let bannerX = 650;
 
-// Initialize canvas
 function initCanvas() {
-    const canvas = document.getElementById("myCanvas");
+    canvas = document.getElementById("myCanvas");
     if (!canvas) return;
 
     ctx = canvas.getContext("2d");
 }
 
-// ================= ANIMATED BANNER =================
+
 function animateBanner() {
 
     if (!ctx) return;
+   
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.clearRect(0, 0, 500, 300);
-
-    // Gradient background
-    let gradient = ctx.createLinearGradient(0, 0, 500, 300);
+    let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
     gradient.addColorStop(0, "#1e3a8a");
     gradient.addColorStop(1, "#7c3aed");
 
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 500, 300);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Glow effect
     ctx.shadowColor = "white";
-    ctx.shadowBlur = 15;
+    ctx.shadowBlur = 20;
 
-    // Main text
     ctx.fillStyle = "white";
     ctx.font = "bold 32px Arial";
-    ctx.fillText("Elite Events", bannerX, 150);
+    ctx.fillText("Elite Events", bannerX, canvas.height / 2 - 10);
 
-    // Subtitle
     ctx.font = "18px Arial";
-    ctx.fillText("Where Moments Become Memories", bannerX, 190);
+    ctx.fillText("Where Moments Become Memories", bannerX, canvas.height / 2 + 25);
 
     ctx.shadowBlur = 0;
 
-    // Move text
-    bannerX -= 3;
+    bannerX -= 2;
 
     if (bannerX < -400) {
-        bannerX = 600;
+        bannerX = canvas.width;
     }
 
     requestAnimationFrame(animateBanner);
 }
 
-// ================= LIVE VALIDATION =================
 function setupValidation() {
 
     let nameInput = document.getElementById("name");
@@ -186,16 +164,16 @@ function setupValidation() {
 
     if (nameInput) {
         nameInput.addEventListener("input", function () {
-            this.style.border = this.value.trim() === "" 
-                ? "2px solid red" 
+            this.style.border = this.value.trim() === ""
+                ? "2px solid red"
                 : "2px solid green";
         });
     }
 
     if (phoneInput) {
         phoneInput.addEventListener("input", function () {
-            this.style.border = this.value.length < 10 
-                ? "2px solid red" 
+            this.style.border = this.value.length < 10
+                ? "2px solid red"
                 : "2px solid green";
         });
     }
